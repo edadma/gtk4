@@ -19,3 +19,7 @@ object LibGTK:
   type GtkApplication_p = Ptr[GtkApplication]
   type GtkWidget = CStruct0
   type GtkWidget_p = Ptr[GtkWidget]
+  type GtkWindow = CStruct0
+  type GtkWindow_p = Ptr[GtkWindow]
+
+  def gtk_application_window_new(application: GtkApplication_p): GtkWindow_p = extern

@@ -1,4 +1,4 @@
-name := "-sn-template"
+name := "gtk4"
 
 version := "0.0.1"
 

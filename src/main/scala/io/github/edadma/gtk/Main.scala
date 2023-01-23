@@ -1,4 +1,4 @@
-package io.github.edadma.gtk
+import io.github.edadma.gtk
 
 @main def run(): Unit =
-  println("Scala Native is awesome!")
+  val app = gtk.applicationNew("test", )

@@ -24,3 +24,4 @@ object LibGTK:
 
   def gtk_application_window_new(application: GtkApplication_p): GtkWindow_p = extern
   def gtk_window_set_title(window: GtkWindow_p, title: CString): Unit = extern
+  def gtk_application_new(application_id: CString, flags: CInt): GtkApplication_p = extern

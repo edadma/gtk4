@@ -4,6 +4,8 @@ import scala.scalanative.unsafe._
 
 import io.github.edadma.gtk.extern.LibGTK as lib
 
+private[gtk] def bool(b: Boolean): CInt = if (b) 1 else 0
+
 enum ApplicationFlags(val bit: Int):
   case DEFAULT_FLAGS extends ApplicationFlags(0)
   case IS_SERVICE extends ApplicationFlags(1 << 0)

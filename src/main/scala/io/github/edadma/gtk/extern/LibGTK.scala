@@ -15,8 +15,12 @@ import scala.scalanative.unsafe._
 @link("glib-2.0")
 @extern
 object LibGTK:
-//  type GtkWidget = CStruct0
-//  type GtkWidget_p = Ptr[GtkWidget]
+  // Gtk Widget
+
+  type GtkWidget = CStruct0
+  type GtkWidget_p = Ptr[GtkWidget]
+
+  def gtk_widget_set_visible(widget: GtkWidget_p, visible: CInt): Unit = extern
 
   // gtkapplicationwindow.h
 

@@ -8,4 +8,4 @@ def activate(app: gtk.Application): Unit =
 
   window.setTitle("Window")
   window.setDefaultSize(200, 200)
-  gtk_widget_show(window);
+  window.setVisible(true)

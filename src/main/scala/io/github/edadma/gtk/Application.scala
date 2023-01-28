@@ -3,7 +3,8 @@ package io.github.edadma.gtk
 import io.github.edadma.gtk.extern.LibGTK as lib
 
 import scala.collection.mutable
-import scala.scalanative.unsafe.Ptr
+
+import scala.scalanative.unsafe._
 
 implicit class Application(val ptr: lib.gpointer) extends AnyVal with GObjectTrait:
   def windowNew: Window = lib.gtk_application_window_new(ptr)

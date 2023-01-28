@@ -11,6 +11,8 @@ trait GObjectTrait extends Any:
     val serial = signalSerialNext
 
     signalMap(serial) = (callback, signal)
-    Zone(implicit z => lib.g_signal_connect_data(ptr, toCString(signal), signalCallback, serial, null, 0))
+    Zone(implicit z =>
+      lib.g_signal_connect_data(ptr, toCString(signal), signalCallback.asInstanceOf[lib.GCallback], serial, null, 0),
+    ).toLong
 
 implicit class GObject(val ptr: lib.gpointer) extends AnyVal with GObjectTrait

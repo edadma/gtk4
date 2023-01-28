@@ -7,7 +7,7 @@ import scala.collection.mutable
 import scala.scalanative.unsafe._
 import scala.scalanative.runtime._
 
-type SignalCallback = (GObjectTrait, String) => Unit
+type SignalCallback = (GObject, String) => Unit
 
 private[gtk] val signalMap = new mutable.HashMap[Ptr[Byte], (SignalCallback, String)]
 private[gtk] var signalSerial: Long = 0

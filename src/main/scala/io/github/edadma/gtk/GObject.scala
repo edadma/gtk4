@@ -15,7 +15,7 @@ trait GObjectTrait extends Any:
       lib.g_signal_connect_data(
         ptr,
         toCString(signal),
-        CFuncPtr2.fromScalaFunction(signalCallback),
+        signalCallback,
         serial,
         null,
         0,

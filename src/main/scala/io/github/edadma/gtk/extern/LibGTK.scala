@@ -38,15 +38,15 @@ object LibGTK:
 
   // gtkapplication.h
 
-  type GtkApplication = CStruct0
-  type GtkApplication_p = Ptr[GtkApplication]
+//  type GtkApplication = CStruct0
+  type GtkApplication_p = gpointer
 
   def gtk_application_new(application_id: CString, flags: CInt): GtkApplication_p = extern
 
   // gapplication.h
 
-  type GApplication = GtkApplication
-  type GApplication_p = GtkApplication_p
+//  type GApplication = GtkApplication
+  type GApplication_p = gpointer
 
   def g_application_run(application: GApplication_p, argc: CInt, argv: Ptr[CString]): CInt = extern
 

@@ -20,3 +20,5 @@ enum ApplicationFlags(val bit: Int):
 
 def applicationNew(application_id: String, flags: ApplicationFlags): Application =
   Zone(implicit z => lib.gtk_application_new(toCString(application_id), flags.bit))
+
+val G_CONNECT_DEFAULT: CInt = 0

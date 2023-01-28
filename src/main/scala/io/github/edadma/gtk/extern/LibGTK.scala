@@ -47,3 +47,17 @@ object LibGTK:
   type GApplication_p = GtkApplication_p
 
   def g_application_run(application: GApplication_p, argc: CInt, argv: Ptr[CString]): CInt = extern
+
+  // gsignal.h
+
+  type gpointer = Ptr[Byte]
+  type GCallback = Ptr[Byte]
+
+  def g_signal_connect_data(
+      instance: gpointer,
+      detailed_signal: CString,
+      c_handler: GCallback,
+      data: gpointer,
+      destroy_data: Ptr[Byte],
+      connect_flags: CInt,
+  ): CUnsignedLong = extern

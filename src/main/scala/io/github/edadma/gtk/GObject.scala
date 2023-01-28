@@ -10,7 +10,7 @@ trait GObjectTrait extends Any:
   def signalConnect(signal: String, callback: SignalCallback): Long =
     val serial = signalSerialNext
 
-    signalMap(serial) = (callback, signal)
+    signalMap(serial) = callback
     Zone(implicit z =>
       lib.g_signal_connect_data(
         ptr,

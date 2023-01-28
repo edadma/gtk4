@@ -6,7 +6,7 @@ import io.github.edadma.gtk
   app.activate(activate)
   app.run
 
-def activate(app: gtk.Application, signal: String): Unit =
+def activate(app: gtk.Application): Unit =
   val window = app.windowNew
 
   window.setTitle("Window")

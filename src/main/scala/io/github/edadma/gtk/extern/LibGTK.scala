@@ -52,7 +52,7 @@ object LibGTK:
 
   // gsignal.h
 
-  type GCallback = Ptr[Byte]
+  type GCallback = CFuncPtr2[gpointer, gpointer, Unit]
 
   def g_signal_connect_data(
       instance: gpointer,

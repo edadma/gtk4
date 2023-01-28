@@ -12,7 +12,14 @@ trait GObjectTrait extends Any:
 
     signalMap(serial) = (callback, signal)
     Zone(implicit z =>
-      lib.g_signal_connect_data(ptr, toCString(signal), signalCallback.asInstanceOf[lib.GCallback], serial, null, 0),
+      lib.g_signal_connect_data(
+        ptr,
+        toCString(signal),
+        CFuncPtr2.fromScalaFunction(signalCallback),
+        serial,
+        null,
+        0,
+      ),
     ).toLong
 
 implicit class GObject(val ptr: lib.gpointer) extends AnyVal with GObjectTrait

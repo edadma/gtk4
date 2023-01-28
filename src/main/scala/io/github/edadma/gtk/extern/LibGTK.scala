@@ -15,17 +15,19 @@ import scala.scalanative.unsafe._
 @link("glib-2.0")
 @extern
 object LibGTK:
+  type gpointer = Ptr[Byte]
+
   // Gtk Widget
 
-  type GtkWidget = CStruct0
-  type GtkWidget_p = Ptr[GtkWidget]
+//  type GtkWidget = CStruct0
+  type GtkWidget_p = gpointer
 
   def gtk_widget_set_visible(widget: GtkWidget_p, visible: CInt): Unit = extern
 
   // gtkapplicationwindow.h
 
-  type GtkWindow = CStruct0
-  type GtkWindow_p = Ptr[GtkWindow]
+//  type GtkWindow = CStruct0
+  type GtkWindow_p = gpointer
 
   def gtk_application_window_new(application: GtkApplication_p): GtkWindow_p = extern
 
@@ -50,7 +52,6 @@ object LibGTK:
 
   // gsignal.h
 
-  type gpointer = Ptr[Byte]
   type GCallback = Ptr[Byte]
 
   def g_signal_connect_data(

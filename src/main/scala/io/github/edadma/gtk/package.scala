@@ -22,3 +22,5 @@ def applicationNew(application_id: String, flags: ApplicationFlags): Application
   Zone(implicit z => lib.gtk_application_new(toCString(application_id), flags.bit))
 
 val G_CONNECT_DEFAULT: CInt = 0
+val G_CONNECT_AFTER = 1 << 0
+val G_CONNECT_SWAPPED = 1 << 1

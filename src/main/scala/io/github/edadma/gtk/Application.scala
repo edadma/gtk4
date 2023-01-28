@@ -10,3 +10,9 @@ implicit class Application(val ptr: lib.GtkApplication_p) extends AnyVal with GO
 
   def activate(callback: (Application, String) => Unit): Long =
     super.signalConnect("activate", callback.asInstanceOf[SignalCallback])
+
+  def run: Int =
+    val status = lib.g_application_run(ptr, 0, null)
+
+    lib.g_object_unref(ptr)
+    status

@@ -62,3 +62,7 @@ object LibGTK:
       destroy_data: Ptr[Byte],
       connect_flags: CInt,
   ): CUnsignedLong = extern
+
+  // gobject.h
+
+  def g_object_unref(objec: gpointer): Unit = extern

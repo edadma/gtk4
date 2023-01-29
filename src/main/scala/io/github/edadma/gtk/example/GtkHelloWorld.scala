@@ -2,8 +2,8 @@ package io.github.edadma.gtk.example
 
 import io.github.edadma.gtk
 
-// direct translation of "Hello, World": https://docs.gtk.org/gtk4/getting_started.html#hello-world
-@main def HelloWorld(): Unit =
+// direct translation of the GTK "Hello, World!" example: https://www.gtk.org/
+@main def GtkHelloWorld(): Unit =
   def on_activate(app: gtk.Application): Unit =
     val window = app.windowNew
     val button = gtk.buttonNewWithLabel("Hello, World!")
@@ -18,7 +18,7 @@ import io.github.edadma.gtk
   app.run
 
 // more concise version
-@main def HelloWorld2(): Unit =
+@main def GtkHelloWorld2(): Unit =
   gtk
     .applicationNew("io.github.edadma.gtk.example", gtk.ApplicationFlags.DEFAULT_FLAGS)
     .activate(app =>

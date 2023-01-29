@@ -4,7 +4,7 @@ import scala.scalanative.unsafe._
 
 import io.github.edadma.gtk.extern.LibGTK as lib
 
-implicit class Window(val ptr: lib.GtkWidget_p /*GtkWindow_p*/ ) extends AnyVal with WidgetTrait:
+implicit class Window(val ptr: lib.GtkWindow_p) extends AnyVal with WidgetTrait:
   def setTitle(title: String): Window =
     Zone(implicit z => lib.gtk_window_set_title(ptr, toCString(title)))
     this

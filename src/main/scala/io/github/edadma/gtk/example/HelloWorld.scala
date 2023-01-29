@@ -2,7 +2,7 @@ package io.github.edadma.gtk.example
 
 import io.github.edadma.gtk
 
-// direct translation of "Basics": https://docs.gtk.org/gtk4/getting_started.html#basics
+// direct translation of "Hello, World": https://docs.gtk.org/gtk4/getting_started.html#hello-world
 @main def HelloWorld(): Unit =
   def activate(app: gtk.Application): Unit =
     val window = app.windowNew

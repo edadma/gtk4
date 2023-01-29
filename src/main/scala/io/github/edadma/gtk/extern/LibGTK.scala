@@ -19,36 +19,32 @@ object LibGTK:
 
   // Gtk Widget
 
-//  type GtkWidget = CStruct0
-  type GtkWidget_p = gpointer
+  type GtkWidget = gpointer
 
-  def gtk_widget_set_visible(widget: GtkWidget_p, visible: CInt): Unit = extern
+  def gtk_widget_set_visible(widget: GtkWidget, visible: CInt): Unit = extern
 
   // gtkapplicationwindow.h
 
-//  type GtkWindow = CStruct0
-  type GtkWindow_p = gpointer
+  type GtkWindow = gpointer
 
-  def gtk_application_window_new(application: GtkApplication_p): GtkWindow_p = extern
+  def gtk_application_window_new(application: GtkApplication): GtkWindow = extern
 
   // gtkwindow.h
 
-  def gtk_window_set_title(window: GtkWindow_p, title: CString): Unit = extern
-  def gtk_window_set_default_size(window: GtkWindow_p, width: CInt, height: CInt): Unit = extern
+  def gtk_window_set_title(window: GtkWindow, title: CString): Unit = extern
+  def gtk_window_set_default_size(window: GtkWindow, width: CInt, height: CInt): Unit = extern
 
   // gtkapplication.h
 
-//  type GtkApplication = CStruct0
-  type GtkApplication_p = gpointer
+  type GtkApplication = gpointer
 
-  def gtk_application_new(application_id: CString, flags: CInt): GtkApplication_p = extern
+  def gtk_application_new(application_id: CString, flags: CInt): GtkApplication = extern
 
   // gapplication.h
 
-//  type GApplication = GtkApplication
-  type GApplication_p = gpointer
+  type GApplication = gpointer
 
-  def g_application_run(application: GApplication_p, argc: CInt, argv: Ptr[CString]): CInt = extern
+  def g_application_run(application: GApplication, argc: CInt, argv: Ptr[CString]): CInt = extern
 
   // gsignal.h
 
@@ -66,3 +62,7 @@ object LibGTK:
   // gobject.h
 
   def g_object_unref(objec: gpointer): Unit = extern
+
+  // gtkbutton.h
+
+  def gtk_button_new_with_label(label: CString): GtkWidget = extern

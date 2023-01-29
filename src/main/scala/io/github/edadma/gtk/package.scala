@@ -18,9 +18,11 @@ enum ApplicationFlags(val bit: Int):
   case ALLOW_REPLACEMENT extends ApplicationFlags(1 << 7)
   case REPLACE extends ApplicationFlags(1 << 8)
 
-def applicationNew(application_id: String, flags: ApplicationFlags): Application =
-  Zone(implicit z => lib.gtk_application_new(toCString(application_id), flags.bit))
-
 val G_CONNECT_DEFAULT: CInt = 0
 val G_CONNECT_AFTER = 1 << 0
 val G_CONNECT_SWAPPED = 1 << 1
+
+def applicationNew(application_id: String, flags: ApplicationFlags): Application =
+  Zone(implicit z => lib.gtk_application_new(toCString(application_id), flags.bit))
+
+def buttonNewWithLabel(label: String): Widget = Zone(implicit z => lib.gtk_button_new_with_label(toCString(label)))

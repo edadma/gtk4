@@ -6,7 +6,7 @@ import scala.collection.mutable
 
 import scala.scalanative.unsafe._
 
-implicit class Application(val ptr: lib.GtkApplication_p) extends AnyVal with GObjectTrait:
+implicit class Application(val ptr: lib.GtkApplication) extends AnyVal with GObjectTrait:
   def windowNew: Window = lib.gtk_application_window_new(ptr)
 
   def activate(callback: Application => Unit): Application =

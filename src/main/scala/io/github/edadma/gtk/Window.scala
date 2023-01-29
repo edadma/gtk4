@@ -14,3 +14,11 @@ implicit class Window(val ptr: lib.GtkWindow) extends AnyVal with WidgetTrait:
     this
 
   def close(): Unit = lib.gtk_window_close(ptr)
+
+  def setChild(child: Widget): Window =
+    lib.gtk_window_set_child(ptr, child.ptr)
+    this
+
+  def present(): Window =
+    lib.gtk_window_present(ptr)
+    this

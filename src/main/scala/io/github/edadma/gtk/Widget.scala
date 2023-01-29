@@ -9,4 +9,7 @@ trait WidgetTrait extends Any with GObjectTrait:
     lib.gtk_widget_set_visible(ptr, bool(visible))
     this
 
-implicit class Widget(val ptr: lib.GtkWidget) extends AnyVal with WidgetTrait
+implicit class Widget(val ptr: lib.GtkWidget) extends AnyVal with WidgetTrait:
+  def clicked(callback: Widget => Unit): Widget =
+    super.signalConnect("clicked", ptr => callback(ptr))
+    this

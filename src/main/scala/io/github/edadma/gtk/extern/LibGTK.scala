@@ -33,6 +33,7 @@ object LibGTK:
 
   def gtk_window_set_title(window: GtkWindow, title: CString): Unit = extern
   def gtk_window_set_default_size(window: GtkWindow, width: CInt, height: CInt): Unit = extern
+  def gtk_window_close(window: GtkWindow): Unit = extern
 
   // gtkapplication.h
 

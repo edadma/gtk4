@@ -12,3 +12,5 @@ implicit class Window(val ptr: lib.GtkWindow) extends AnyVal with WidgetTrait:
   def setDefaultSize(width: Int, height: Int): Window =
     lib.gtk_window_set_default_size(ptr, width, height)
     this
+
+  def close(): Unit = lib.gtk_window_close(ptr)
